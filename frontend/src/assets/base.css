@@ -1,0 +1,211 @@
+:root {
+  --background: #fcfcfc;
+  --primary: #1f1f1f;
+
+  --text-on-primary: var(--background);
+
+  --text-strong: var(--primary);
+  --text-medium: #757575;
+  --text-weak: #a0a0a0;
+
+  --text-strong-inverse: var(--background);
+  --text-medium-inverse: #757575;
+  --text-weak-inverse: #a0a0a0;
+}
+
+[data-theme='dark'] {
+  --background: #1f1f1f;
+  --primary: #fcfcfc;
+  --text-on-primary: var(--background);
+
+  --text-strong: var(--primary);
+  --text-medium: #b0b0b0;
+  --text-weak: #808080;
+
+  --text-strong-inverse: var(--background);
+  --text-medium-inverse: #a0a0a0;
+  --text-weak-inverse: #d0d0d0;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+} */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Geist,
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* tipografia */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Geist', Inter, Sans-serif;
+  font-weight: bold;
+  line-height: 1.2;
+  color: var(--text-strong);
+}
+
+h1 {
+  font-size: clamp(3rem, 5vw, 3.812rem);
+}
+
+h2 {
+  font-size: clamp(2.5rem, 4.5vw, 3.062rem);
+}
+
+h3 {
+  font-size: clamp(2.062rem, 4vw, 2.438rem);
+}
+
+h4 {
+  font-size: clamp(1.75rem, 3.5vw, 1.938rem);
+}
+
+h5 {
+  font-size: clamp(1.438rem, 3vw, 1.562rem);
+}
+
+h6 {
+  font-size: clamp(1.188rem, 2.5vw, 1.25rem);
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-medium);
+}
+
+p.small {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* controles */
+.outer {
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.show-on-mobile {
+  display: block;
+}
+
+.hide-on-mobile {
+  display: none;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .outer {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* Desktop sm*/
+@media (min-width: 1024px) {
+  .outer {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .hide-on-mobile {
+    display: block;
+  }
+
+  .on-mobile {
+    display: none;
+  }
+}
+
+/* Desktop lg*/
+@media (min-width: 1404px) {
+  .outer {
+    padding-left: 160px;
+    padding-right: 160px;
+  }
+
+  nav {
+    display: flex;
+  }
+}
+
+.inner {
+  max-width: 1440px;
+}
+
+button {
+  font-family: 'Geist Mono', monospace;
+  font-size: 1rem;
+  line-height: 125%;
+}
+
+button.primary {
+  background-color: var(--primary);
+  color: var(--text-on-primary);
+  height: 40px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 8px;
+}
+
+button.primary:hover {
+  cursor: pointer;
+}
+
+button.secondary {
+  background-color: transparent;
+  color: var(--text-strong);
+  border: 1px solid var(--primary);
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  border-radius: 8px;
+}
